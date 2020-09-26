@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+}
+#particles-js{
+    height:100%;
+    background:black;
+    margin:0;
+    padding:0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#welcome{
+    color:white;
+    background: transparent;
+    display: block;
+    margin: 170px auto auto 550px;
+    width: 400px;
+  }
+#create button{
+    display: block;
+    margin: 40px auto auto 630px;
+    width:100px;
+    height: 50px;
+    border-radius: 5px;
+    border:100;
+    background-color: rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+    font-weight: bolder;
+    color: #ffff;
+    outline: none;
+    
+}
+#score button{
+    height: 50px;
+    display: block;
+    margin: 40px auto auto 630px;
+    border-radius: 5px;
+    border: 100;
+    background-color:rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+    font-weight: bolder;
+    color: #ffff;
+    width:100px;
+    outline: none;
+
+}
+a{
+    color: white;
+    text-decoration:none;
+}
+.area{
+    position: absolute;
+}

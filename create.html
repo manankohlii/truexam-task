@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="create.css">
+   
+</head>
+<body>
+    
+    <center><h1>CREATE A TASK</h1></center>
+    <form class="form" id="myForm">
+        <input type="file" id="inpFile">
+        
+        
+        
+        <input type="text" id="details" placeholder="Enter task details"><br>
+        <input type="number" id="id" placeholder="Enter task ID"><br>
+        </form>
+        <button type="submit" id="submit">Upload File</button><br>
+    
+    
+
+<script>
+    document.querySelector("#inpFile").addEventListener("change",function(){
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () =>{
+            localStorage.setItem("task-image",reader.result);
+        });
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    
+    
+        
+       
+</script>
+
+</body>
+</html>

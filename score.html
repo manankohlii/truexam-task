@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Images</title>
+    <link rel="stylesheet" href="score.css">
+</head>
+<body>
+    <center>
+    <input id="url" type="text" placeholder="Enter student ID"/>
+    <button id="button">Display Image</button>
+    </center>
+</body>
+    <script>
+        var button = document.getElementById('button')
+        
+        button.addEventListener('click',function(event){
+            var imageurl = document.getElementById('url').value 
+            var img = document.createElement('img')
+
+            var input = document.createElement('input')
+            input.placeholder = "Enter Marks"
+            input.className = "marks"
+            input.id = "marks"
+            
+            img.src = imageurl + ".jpg"
+            img.className="image"
+            img.id="image"
+
+            var button = document.createElement('button')
+            button.textContent="Download Image"
+            button.className="download"
+
+            var button1 = document.createElement('button')
+            button1.textContent="Add marks"
+            button1.className="add"
+            button1.id="add"
+            
+            
+            button.addEventListener('click',function(event){
+                FileSaver.saveAs(img.getAttribute('src'), "image.jpg");
+            })
+           
+            
+            document.body.appendChild(img)
+            document.body.appendChild(input)
+            document.body.appendChild(button1)
+            document.body.appendChild(button)
+        })
+    let student = [];
+
+    const addMarks = (ev)=>{
+        ev.preventDefault();
+        let student = {
+            id: document.getElementById('url').value,
+            marks: document.getElementById('marks').value
+    }
+    student.push(student);
+    document.forms[0].reset();
+
+    console.warn('added',{student});
+    
+    }
+    window.onload=function(){
+    document.addEventListener('DOMContentLoaded',()=>{
+        document.getElementById('add').addEventListener('click',addMarks);
+    });
+    }
+    </script>
+    <script src="FileSaver.min.js"></script>
+    <script src="FileSaver.js"></script>
+</html>
